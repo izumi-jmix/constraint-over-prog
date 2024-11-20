@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://manufacturerBrowse.caption"
+        focusComponent="manufacturersTable">
+    <data readOnly="true">
+        <collection id="manufacturersDc"
+                    class="org.izumi.jmix.dgrid161editor.entity.Manufacturer">
+            <fetchPlan extends="_base"/>
+            <loader id="manufacturersDl">
+                <query>
+                    <![CDATA[select e from Manufacturer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="lookupSelectAction" type="lookup_select"/>
+        <action id="lookupCancelAction" type="lookup_discard"/>
+    </actions>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="manufacturersTable" spacing="true">
+        <filter id="filter"
+                dataLoader="manufacturersDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="manufacturersTable"
+                    width="100%"
+                    dataContainer="manufacturersDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="manufacturersTable.create"/>
+                <button id="editBtn" action="manufacturersTable.edit"/>
+                <button id="removeBtn" action="manufacturersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

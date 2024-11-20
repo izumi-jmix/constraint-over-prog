@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://jmix.io/schema/ui/menu">
+
+    <menu id="application" caption="msg://org.izumi.jmix.dgrid161editor/menu.application" insertBefore="administration">
+        <item screen="User.browse" caption="msg://org.izumi.jmix.dgrid161editor.screen.user/UserBrowse.caption"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
+        <item screen="Port.browse" caption="msg://org.izumi.jmix.dgrid161editor.screen.port/portBrowse.menu"/>
+        <item screen="Ship.browse" caption="msg://org.izumi.jmix.dgrid161editor.screen.ship/shipBrowse.menu"/>
+        <item screen="Manufacturer.browse"
+              caption="msg://org.izumi.jmix.dgrid161editor.screen.manufacturer/manufacturerBrowse.menu"/>
+    </menu>
+
+</menu-config>

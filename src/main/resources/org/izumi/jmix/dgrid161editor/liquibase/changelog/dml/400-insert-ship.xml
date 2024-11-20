@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="Aiden Izumi">
+        <insert tableName="SHIP">
+            <column name="ID" value="9bcccfa7-b6e1-49c8-911c-4ae06f96c83e"/>
+            <column name="NAME" value="Indonesian#1"/>
+            <column name="DESCRIPTION" value="Indonesian ship #1"/>
+            <column name="WEIGHT" value="155632.3"/>
+            <column name="WIDTH" value="35.0"/>
+            <column name="HEIGHT" value="50.0"/>
+            <column name="D1" value="I1D1"/>
+            <column name="D2" value="I1D2"/>
+            <column name="D3" value="I1D3"/>
+            <column name="D4" value="I1D4"/>
+            <column name="D5" value="I1D5"/>
+            <column name="D6" value="I1D6"/>
+            <column name="D7" value="I1D7"/>
+            <column name="CURRENT_PORT_ID" value="43179178-2934-4b80-86ec-27735113179f"/>
+            <column name="MANUFACTURER_ID" value="3dc659e7-20b4-4418-acea-719af30252e3"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="2" author="Aiden Izumi">
+        <insert tableName="SHIP">
+            <column name="ID" value="614f0308-4efa-4709-97db-936a7dfd2b08"/>
+            <column name="NAME" value="Indonesian#2"/>
+            <column name="DESCRIPTION" value="Indonesian ship #2"/>
+            <column name="WEIGHT" value="199632.3"/>
+            <column name="WIDTH" value="45.0"/>
+            <column name="HEIGHT" value="70.0"/>
+            <column name="D1" value="I2D1"/>
+            <column name="D2" value="I2D2"/>
+            <column name="D3" value="I2D3"/>
+            <column name="D4" value="I2D4"/>
+            <column name="D5" value="I2D5"/>
+            <column name="D6" value="I2D6"/>
+            <column name="D7" value="I2D7"/>
+            <column name="CURRENT_PORT_ID" value="a5a74d3b-8771-4b4d-b6c1-4e2f577ddbba"/>
+            <!--<column name="MANUFACTURER_ID" value=""/>-->
+        </insert>
+    </changeSet>
+
+    <changeSet id="3" author="Aiden Izumi">
+        <insert tableName="SHIP">
+            <column name="ID" value="38e48cb2-3c14-4967-93ba-5a1917dea0f7"/>
+            <column name="NAME" value="Indonesian#3"/>
+            <column name="DESCRIPTION" value="Indonesian ship #3"/>
+            <column name="WEIGHT" value="111632.3"/>
+            <column name="WIDTH" value="25.0"/>
+            <column name="HEIGHT" value="20.0"/>
+            <column name="D1" value="I3D1"/>
+            <column name="D2" value="I3D2"/>
+            <column name="D3" value="I3D3"/>
+            <column name="D4" value="I3D4"/>
+            <column name="D5" value="I3D5"/>
+            <column name="D6" value="I3D6"/>
+            <column name="D7" value="I3D7"/>
+            <!--<column name="CURRENT_PORT_ID" value=""/>-->
+            <column name="MANUFACTURER_ID" value="3dc659e7-20b4-4418-acea-719af30252e3"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="4" author="Aiden Izumi">
+        <insert tableName="SHIP">
+            <column name="ID" value="d4b1292b-e7e0-4f83-9138-adb4f1341df5"/>
+            <column name="NAME" value="Indonesian#4"/>
+            <column name="DESCRIPTION" value="Indonesian ship #4"/>
+            <column name="WEIGHT" value="144632.3"/>
+            <column name="WIDTH" value="15.0"/>
+            <column name="HEIGHT" value="55.0"/>
+            <column name="D1" value="I4D1"/>
+            <column name="D2" value="I4D2"/>
+            <column name="D3" value="I4D3"/>
+            <column name="D4" value="I4D4"/>
+            <column name="D5" value="I4D5"/>
+            <column name="D6" value="I4D6"/>
+            <column name="D7" value="I4D7"/>
+            <!--<column name="CURRENT_PORT_ID" value=""/>-->
+            <!--<column name="MANUFACTURER_ID" value=""/>-->
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

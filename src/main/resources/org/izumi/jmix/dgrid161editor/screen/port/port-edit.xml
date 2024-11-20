@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://portEdit.caption"
+        focusComponent="form">
+    <data>
+        <instance id="portDc" class="org.izumi.jmix.dgrid161editor.entity.Port">
+            <loader/>
+            <fetchPlan extends="_base">
+                <property name="ships" fetchPlan="_base"/>
+            </fetchPlan>
+
+            <collection id="shipsDc" property="ships"/>
+        </instance>
+    </data>
+
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+
+    <actions>
+        <action id="windowCommitAndClose" type="editor_commitClose"/>
+        <action id="windowClose" type="editor_close"/>
+    </actions>
+
+    <dialogMode height="600" width="800"/>
+
+    <layout spacing="true" expand="shipsGrid">
+        <form id="form" dataContainer="portDc">
+            <column width="350px">
+                <textField id="nameField" property="name"/>
+            </column>
+        </form>
+
+        <dataGrid id="shipsGrid" dataContainer="shipsDc" editorEnabled="true"
+                  minHeight="200px"
+                  width="50%">
+            <columns>
+                <column id="name" property="name"/>
+                <column id="description" property="description"/>
+                <column id="d1" property="d1"/>
+                <column id="d2" property="d2"/>
+                <column id="d3" property="d3"/>
+                <column id="d4" property="d4"/>
+                <column id="d5" property="d5"/>
+                <column id="d6" property="d6"/>
+                <column id="d7" property="d7"/>
+                <column id="height" property="height" editable="true"/>
+                <column id="width" property="width" editable="true"/>
+                <column id="weight" property="weight" editable="true"/>
+            </columns>
+        </dataGrid>
+
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

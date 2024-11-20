@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        xmlns:c="http://jmix.io/schema/ui/jpql-condition"
+        caption="msg://portBrowse.caption"
+        focusComponent="portsTable">
+    <data readOnly="true">
+        <collection id="portsDc"
+                    class="org.izumi.jmix.dgrid161editor.entity.Port">
+            <fetchPlan extends="_base"/>
+            <loader id="portsDl">
+                <query>
+                    <![CDATA[select e from Port e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+
+    <actions>
+        <action id="lookupSelectAction" type="lookup_select"/>
+        <action id="lookupCancelAction" type="lookup_discard"/>
+    </actions>
+
+    <dialogMode height="600" width="800"/>
+
+    <layout expand="portsTable" spacing="true">
+        <filter id="filter" dataLoader="portsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="portsTable" dataContainer="portsDc" width="100%">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+                <action id="ownAction" caption="Own action"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <simplePagination/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="portsTable.create"/>
+                <button id="editBtn" action="portsTable.edit"/>
+                <button id="removeBtn" action="portsTable.remove"/>
+                <button id="ownActionBtn" action="portsTable.ownAction"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
