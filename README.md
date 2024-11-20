@@ -3,3 +3,4 @@
 2. Open Ships browser ("Application" -> "Ships")
 3. Open to View a row with any Name.
 4. "Current port" field is editable despite user has only readonly access.
+![img.png](docs/img.png)
