@@ -2,7 +2,6 @@ package org.izumi.jmix.dgrid161editor.screen.ship;
 
 import java.util.Objects;
 
-import io.jmix.core.DataManager;
 import io.jmix.ui.component.EntityPicker;
 import io.jmix.ui.component.HasValue;
 import io.jmix.ui.screen.EditedEntityContainer;
@@ -21,23 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ShipEdit extends StandardEditor<Ship> {
 
     @Autowired
-    private DataManager dataManager;
-
-    @Autowired
     private EntityPicker<Port> currentPortField;
-
-    @Subscribe
-    public void onAfterShow(final AfterShowEvent event) {
-        final var edited = getEditedEntity();
-        if (Objects.isNull(edited.getManufacturer())) {
-            dataManager.unconstrained()
-                    .load(Manufacturer.class)
-                    .query("e.name = :name")
-                    .parameter("name", "default")
-                    .optional()
-                    .ifPresent(edited::setManufacturer);
-        }
-    }
 
     @Subscribe("manufacturerField")
     public void onManufacturerFieldValueChange(final HasValue.ValueChangeEvent<Manufacturer> event) {
